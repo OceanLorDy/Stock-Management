@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Stok3Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tbl_Zimmet">
+    <Key>
+      <PropertyRef Name="Tarih" />
+      <PropertyRef Name="Yapan_Kisi_Id" />
+    </Key>
+    <Property Name="Tarih" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Yapan_Kisi_Id" Type="Int32" Nullable="false" />
+    <Property Name="Yapilan_Kisi_No" Type="Int32" />
+    <Property Name="Parca_Id" Type="Int32" />
+    <Property Name="Pc_Id" Type="Int32" />
+    <Property Name="Not" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tblGiris" Relationship="Self.FK_tbl_Zimmet_tblGiris" FromRole="tbl_Zimmet" ToRole="tblGiris" />
+    <NavigationProperty Name="tblParca" Relationship="Self.FK_tbl_Zimmet_tblParca" FromRole="tbl_Zimmet" ToRole="tblParca" />
+    <NavigationProperty Name="tblPc" Relationship="Self.FK_tbl_Zimmet_tblPc" FromRole="tbl_Zimmet" ToRole="tblPc" />
+    <NavigationProperty Name="tblPersonel" Relationship="Self.FK_tbl_Zimmet_tblPersonel" FromRole="tbl_Zimmet" ToRole="tblPersonel" />
+  </EntityType>
+  <EntityType Name="tblGiris">
+    <Key>
+      <PropertyRef Name="Kullanici_Id" />
+    </Key>
+    <Property Name="Kullanici_Id" Type="Int32" Nullable="false" />
+    <Property Name="Kullanici_Adi" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Sifre" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="tbl_Zimmet" Relationship="Self.FK_tbl_Zimmet_tblGiris" FromRole="tblGiris" ToRole="tbl_Zimmet" />
+    <NavigationProperty Name="tblPersonel" Relationship="Self.FK_tblPersonel_tblGiris" FromRole="tblGiris" ToRole="tblPersonel" />
+  </EntityType>
+  <EntityType Name="tblParca">
+    <Key>
+      <PropertyRef Name="Parca_Id" />
+    </Key>
+    <Property Name="Parca_Id" Type="Int32" Nullable="false" />
+    <Property Name="Pc_Id" Type="Int32" />
+    <Property Name="Tur" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Adi" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Fiyat" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Firma" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Alinan_Tarih" Type="DateTime" Precision="3" />
+    <Property Name="Stok_Durumu" Type="Int32" />
+    <Property Name="Model" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Marka" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Not" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbl_Zimmet" Relationship="Self.FK_tbl_Zimmet_tblParca" FromRole="tblParca" ToRole="tbl_Zimmet" />
+    <NavigationProperty Name="tblPc" Relationship="Self.FK_tblParca_tblPc" FromRole="tblParca" ToRole="tblPc" />
+  </EntityType>
+  <EntityType Name="tblPc">
+    <Key>
+      <PropertyRef Name="Pc_Id" />
+    </Key>
+    <Property Name="Pc_Id" Type="Int32" Nullable="false" />
+    <Property Name="Adi" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Fiyat" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Firma" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Alinan_Tarih" Type="DateTime" Precision="3" />
+    <Property Name="Stok_Durumu" Type="Int32" />
+    <Property Name="Marka" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Model" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Not" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbl_Zimmet" Relationship="Self.FK_tbl_Zimmet_tblPc" FromRole="tblPc" ToRole="tbl_Zimmet" />
+    <NavigationProperty Name="tblParca" Relationship="Self.FK_tblParca_tblPc" FromRole="tblPc" ToRole="tblParca" />
+  </EntityType>
+  <EntityType Name="tblPersonel">
+    <Key>
+      <PropertyRef Name="Personel_No" />
+    </Key>
+    <Property Name="Personel_No" Type="Int32" Nullable="false" />
+    <Property Name="Kullanici_Id" Type="Int32" />
+    <Property Name="Kullanici_Tipi" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Ad" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Soyad" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Adres" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Maas" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Baslama_Tarihi" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbl_Zimmet" Relationship="Self.FK_tbl_Zimmet_tblPersonel" FromRole="tblPersonel" ToRole="tbl_Zimmet" />
+    <NavigationProperty Name="tblGiris" Relationship="Self.FK_tblPersonel_tblGiris" FromRole="tblPersonel" ToRole="tblGiris" />
+  </EntityType>
+  <Association Name="FK_tbl_Zimmet_tblGiris">
+    <End Role="tblGiris" Type="Self.tblGiris" Multiplicity="1" />
+    <End Role="tbl_Zimmet" Type="Self.tbl_Zimmet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblGiris">
+        <PropertyRef Name="Kullanici_Id" />
+      </Principal>
+      <Dependent Role="tbl_Zimmet">
+        <PropertyRef Name="Yapan_Kisi_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Zimmet_tblParca">
+    <End Role="tblParca" Type="Self.tblParca" Multiplicity="0..1" />
+    <End Role="tbl_Zimmet" Type="Self.tbl_Zimmet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblParca">
+        <PropertyRef Name="Parca_Id" />
+      </Principal>
+      <Dependent Role="tbl_Zimmet">
+        <PropertyRef Name="Parca_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Zimmet_tblPc">
+    <End Role="tblPc" Type="Self.tblPc" Multiplicity="0..1" />
+    <End Role="tbl_Zimmet" Type="Self.tbl_Zimmet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblPc">
+        <PropertyRef Name="Pc_Id" />
+      </Principal>
+      <Dependent Role="tbl_Zimmet">
+        <PropertyRef Name="Pc_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Zimmet_tblPersonel">
+    <End Role="tblPersonel" Type="Self.tblPersonel" Multiplicity="0..1" />
+    <End Role="tbl_Zimmet" Type="Self.tbl_Zimmet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblPersonel">
+        <PropertyRef Name="Personel_No" />
+      </Principal>
+      <Dependent Role="tbl_Zimmet">
+        <PropertyRef Name="Yapilan_Kisi_No" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblPersonel_tblGiris">
+    <End Role="tblGiris" Type="Self.tblGiris" Multiplicity="0..1" />
+    <End Role="tblPersonel" Type="Self.tblPersonel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblGiris">
+        <PropertyRef Name="Kullanici_Id" />
+      </Principal>
+      <Dependent Role="tblPersonel">
+        <PropertyRef Name="Kullanici_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblParca_tblPc">
+    <End Role="tblPc" Type="Self.tblPc" Multiplicity="0..1" />
+    <End Role="tblParca" Type="Self.tblParca" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblPc">
+        <PropertyRef Name="Pc_Id" />
+      </Principal>
+      <Dependent Role="tblParca">
+        <PropertyRef Name="Pc_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Stok3Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tbl_Zimmet" EntityType="Self.tbl_Zimmet" />
+    <EntitySet Name="tblGiris" EntityType="Self.tblGiris" />
+    <EntitySet Name="tblParca" EntityType="Self.tblParca" />
+    <EntitySet Name="tblPc" EntityType="Self.tblPc" />
+    <EntitySet Name="tblPersonel" EntityType="Self.tblPersonel" />
+    <AssociationSet Name="FK_tbl_Zimmet_tblGiris" Association="Self.FK_tbl_Zimmet_tblGiris">
+      <End Role="tblGiris" EntitySet="tblGiris" />
+      <End Role="tbl_Zimmet" EntitySet="tbl_Zimmet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Zimmet_tblParca" Association="Self.FK_tbl_Zimmet_tblParca">
+      <End Role="tblParca" EntitySet="tblParca" />
+      <End Role="tbl_Zimmet" EntitySet="tbl_Zimmet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Zimmet_tblPc" Association="Self.FK_tbl_Zimmet_tblPc">
+      <End Role="tblPc" EntitySet="tblPc" />
+      <End Role="tbl_Zimmet" EntitySet="tbl_Zimmet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Zimmet_tblPersonel" Association="Self.FK_tbl_Zimmet_tblPersonel">
+      <End Role="tblPersonel" EntitySet="tblPersonel" />
+      <End Role="tbl_Zimmet" EntitySet="tbl_Zimmet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblPersonel_tblGiris" Association="Self.FK_tblPersonel_tblGiris">
+      <End Role="tblGiris" EntitySet="tblGiris" />
+      <End Role="tblPersonel" EntitySet="tblPersonel" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblParca_tblPc" Association="Self.FK_tblParca_tblPc">
+      <End Role="tblPc" EntitySet="tblPc" />
+      <End Role="tblParca" EntitySet="tblParca" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

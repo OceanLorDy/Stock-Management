@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4fce82692f804b8689d92a3f29b96e04" Name="Diagram1">
+        <EntityTypeShape EntityType="Stok3Model.tbl_Zimmet" Width="1.5" PointX="5.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Stok3Model.tblGiris" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Stok3Model.tblParca" Width="1.5" PointX="3" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Stok3Model.tblPc" Width="1.5" PointX="0.75" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Stok3Model.tblPersonel" Width="1.5" PointX="3" PointY="11.625" IsExpanded="true" />
+        <AssociationConnector Association="Stok3Model.FK_tbl_Zimmet_tblGiris" ManuallyRouted="false" />
+        <AssociationConnector Association="Stok3Model.FK_tbl_Zimmet_tblParca" ManuallyRouted="false" />
+        <AssociationConnector Association="Stok3Model.FK_tbl_Zimmet_tblPc" ManuallyRouted="false" />
+        <AssociationConnector Association="Stok3Model.FK_tbl_Zimmet_tblPersonel" ManuallyRouted="false" />
+        <AssociationConnector Association="Stok3Model.FK_tblPersonel_tblGiris" ManuallyRouted="false" />
+        <AssociationConnector Association="Stok3Model.FK_tblParca_tblPc" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

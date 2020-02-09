@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Stok3ModelStoreContainer" CdmEntityContainer="Stok3Entities">
+    <EntitySetMapping Name="tbl_Zimmet">
+      <EntityTypeMapping TypeName="Stok3Model.tbl_Zimmet">
+        <MappingFragment StoreEntitySet="tbl_Zimmet">
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+          <ScalarProperty Name="Yapan_Kisi_Id" ColumnName="Yapan_Kisi_Id" />
+          <ScalarProperty Name="Yapilan_Kisi_No" ColumnName="Yapilan_Kisi_No" />
+          <ScalarProperty Name="Parca_Id" ColumnName="Parca_Id" />
+          <ScalarProperty Name="Pc_Id" ColumnName="Pc_Id" />
+          <ScalarProperty Name="Not" ColumnName="Not" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblGiris">
+      <EntityTypeMapping TypeName="Stok3Model.tblGiris">
+        <MappingFragment StoreEntitySet="tblGiris">
+          <ScalarProperty Name="Kullanici_Id" ColumnName="Kullanici_Id" />
+          <ScalarProperty Name="Kullanici_Adi" ColumnName="Kullanici_Adi" />
+          <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblParca">
+      <EntityTypeMapping TypeName="Stok3Model.tblParca">
+        <MappingFragment StoreEntitySet="tblParca">
+          <ScalarProperty Name="Parca_Id" ColumnName="Parca_Id" />
+          <ScalarProperty Name="Pc_Id" ColumnName="Pc_Id" />
+          <ScalarProperty Name="Tur" ColumnName="Tur" />
+          <ScalarProperty Name="Adi" ColumnName="Adi" />
+          <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+          <ScalarProperty Name="Firma" ColumnName="Firma" />
+          <ScalarProperty Name="Alinan_Tarih" ColumnName="Alinan_Tarih" />
+          <ScalarProperty Name="Stok_Durumu" ColumnName="Stok_Durumu" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Marka" ColumnName="Marka" />
+          <ScalarProperty Name="Not" ColumnName="Not" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblPc">
+      <EntityTypeMapping TypeName="Stok3Model.tblPc">
+        <MappingFragment StoreEntitySet="tblPc">
+          <ScalarProperty Name="Pc_Id" ColumnName="Pc_Id" />
+          <ScalarProperty Name="Adi" ColumnName="Adi" />
+          <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+          <ScalarProperty Name="Firma" ColumnName="Firma" />
+          <ScalarProperty Name="Alinan_Tarih" ColumnName="Alinan_Tarih" />
+          <ScalarProperty Name="Stok_Durumu" ColumnName="Stok_Durumu" />
+          <ScalarProperty Name="Marka" ColumnName="Marka" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Not" ColumnName="Not" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblPersonel">
+      <EntityTypeMapping TypeName="Stok3Model.tblPersonel">
+        <MappingFragment StoreEntitySet="tblPersonel">
+          <ScalarProperty Name="Personel_No" ColumnName="Personel_No" />
+          <ScalarProperty Name="Kullanici_Id" ColumnName="Kullanici_Id" />
+          <ScalarProperty Name="Kullanici_Tipi" ColumnName="Kullanici_Tipi" />
+          <ScalarProperty Name="Ad" ColumnName="Ad" />
+          <ScalarProperty Name="Soyad" ColumnName="Soyad" />
+          <ScalarProperty Name="Adres" ColumnName="Adres" />
+          <ScalarProperty Name="Maas" ColumnName="Maas" />
+          <ScalarProperty Name="Baslama_Tarihi" ColumnName="Baslama_Tarihi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
